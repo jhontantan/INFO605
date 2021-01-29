@@ -23,7 +23,7 @@ public class Monde {
 		Robot D2R2 = new Robot(tab);
 		char c = ' ';
 		Couleur coul;
-		TailleCube tc;
+		TailleBloc tc;
 		do {
 		System.out.println("1 - creer un cube");
 		System.out.println("2 - détruire un cube");
@@ -43,7 +43,7 @@ public class Monde {
 		case '2':
 			System.out.println("Le cube tenu par le robot va être détruit ");
 			Keyboard.pause();
-			D2R2.detruireCube();
+			D2R2.detruireBloc();
 			break;
 		}
 		afficherMonde(D2R2, tab);
