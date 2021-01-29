@@ -4,20 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Table {
+	
     private List<Bloc> sommets = new ArrayList<Bloc> ();
 
-    public Bloc prendreBloc(TailleBloc taille, String couleur) {
 
-    }
-
-    public Bloc regardeBlocSurTable(TailleBloc taille, String couleur) {
-
-    }
-
-    public boolean verifierEspace() {
-
-    }
-
+    // GETTERS ET SETTERS
+    
     List<Bloc> getSommets() {
 
         return this.sommets;
@@ -29,6 +21,22 @@ public class Table {
         this.sommets = value;
 
     }
+    
+    // METHODES 
+    
+    public Bloc prendreBloc(Bloc b) {
+    	return b;
+    	
+    }
+
+    public Bloc regardeBlocSurTable(Bloc b) {
+    	return b;
+    }
+
+    public boolean verifierEspace() {
+    	return true;
+    }
+
 
     public void trouveBlocPlusGrand(TailleBloc taille) {
 
@@ -42,8 +50,8 @@ public class Table {
 
     }
 
-    public Bloc regardeSommet(TailleBloc taille, String couleur) {
-
+    public Bloc regardeSommet(Bloc b) {
+    	return b;
     }
 
     public void poserBlocSurBloc(TailleBloc taille, String couleur, Bloc blocTenu) {
