@@ -50,6 +50,16 @@ public class Bloc {
 	public Integer getNumero() {
 		return Numero;
 	}
+	
+	public boolean equals(Object obj) {
+        if(obj != null) {
+              if(obj instanceof Bloc) {
+            	  Bloc bloc = (Ville) obj;
+                  return this.id == bloc.id; 
+              }
+        }
+        return false;
+    }
 
 
 /*
@@ -76,7 +86,7 @@ public class Bloc {
 
     }
 
-
+    
 
 
 
