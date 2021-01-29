@@ -4,10 +4,21 @@ package tp2;
 
 public class Bloc {
 	
+	private Integer Numero;
     private String Couleur;
     private TailleBloc Taille;
     private Bloc dessous;
 
+    public static Integer NUMERO = 0;
+    
+    // CONSTRUCTEUR
+    
+    public Bloc(String pCouleur, TailleBloc pTaille, Bloc pdessous ) {
+    	this.Numero = NUMERO++;
+    	this.Couleur = pCouleur;
+    	this.Taille = pTaille;
+    	this.dessous = pdessous;
+    }
 
     // GETTERS ET SETTERS
     
@@ -35,6 +46,11 @@ public class Bloc {
 	public void setDessous(Bloc dessous) {
 		this.dessous = dessous;
 	}
+	
+	public Integer getNumero() {
+		return Numero;
+	}
+
 
 /*
     Bloc getBloc() {
@@ -59,6 +75,8 @@ public class Bloc {
     public void BlocDessous(Bloc bloc) {
 
     }
+
+
 
 
 
