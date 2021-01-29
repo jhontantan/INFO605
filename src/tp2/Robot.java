@@ -3,26 +3,14 @@ package tp2;
 
 
 public class Robot {
-    public Bloc blocTenu;
+    
+	public Bloc blocTenu;
 
     private Table table;
 
-    public void CreerBloc()(TailleBloc taille, String couleur) {
-
-    }
-
-    public boolean tenirBloc() {
-
-    }
-
-    public void detruireBloc(Bloc blocTenu) {
-
-    }
-
-    public void prendreBloc(TailleBloc taille, String couleur) {
-
-    }
-
+    
+    // GETTERS ET SETTERS
+    
     Bloc getBlocTenu() {
 
         return this.blocTenu;
@@ -43,6 +31,25 @@ public class Robot {
 
         this.table = value;
     }
+    
+    // METHODES 
+    
+    public void CreerBloc(TailleBloc taille, String couleur) {
+
+    }
+
+    public boolean tenirBloc() {
+    	return false;
+    }
+
+    public void detruireBloc(Bloc blocTenu) {
+
+    }
+
+    public void prendreBloc(TailleBloc taille, String couleur) {
+
+    }
+
 
     public void poserBloc(Bloc blocTenu) {
 
