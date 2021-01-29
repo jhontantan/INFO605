@@ -19,6 +19,7 @@ public class Bloc {
     	this.Taille = pTaille;
     	this.dessous = pdessous;
     }
+    
 
     // GETTERS ET SETTERS
     

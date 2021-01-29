@@ -35,7 +35,8 @@ public class Robot {
     // METHODES 
     
     public void CreerBloc(TailleBloc taille, String couleur) {
-
+    	Bloc b = new Bloc(couleur,taille,null);
+   
     }
 
     public boolean tenirBloc() {
@@ -43,11 +44,28 @@ public class Robot {
     }
 
     public void detruireBloc(Bloc blocTenu) {
-
+    	if (tenirBloc() == true ) {
+    		blocTenu = null;
+    	}
+    		  
     }
 
     public void prendreBloc(TailleBloc taille, String couleur) {
 
+    	if (tenirBloc() == false) {    // on verifie que le robot n'a pas de bloc dans son bras
+    		
+    		// On regarde sur la table les caractéristiques du bloc que l'on cherche
+    		//regardeBlocSurTable(Bloc(couleur, taille, null));
+    		
+    		// On demande au bloc s'il correspond bien
+    		
+    		// On met à jour le sommet
+    		
+    		// Le robot tient désormais un bloc dans son bras
+    		//tenirBloc() = true;
+    		
+    	}
+    
     }
 
 
