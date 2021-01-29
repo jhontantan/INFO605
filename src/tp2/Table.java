@@ -1,4 +1,4 @@
-package tp2;
+package  src.tp2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,12 @@ public class Table {
     	
     }
 
+    public int nombreBlocSurTable() {
+    	return this.sommets.size();	
+	}
     public Bloc regardeBlocSurTable(Bloc b) {
+    	
+    	
     	return b;
     }
 
@@ -43,11 +48,11 @@ public class Table {
     }
 
     public void supprimerSommet(Bloc bloc) {
-
+    	//this.sommets.remove(bloc.getNumero());
     }
 
     public void ajouterSommet(Bloc nouveauSommet) {
-
+    	this.sommets.add(nouveauSommet);
     }
 
     public Bloc regardeSommet(Bloc b) {

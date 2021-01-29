@@ -1,6 +1,4 @@
-package tp2;
-
-
+package src.tp2;
 
 public class Bloc {
 	
@@ -13,7 +11,7 @@ public class Bloc {
     
     // CONSTRUCTEUR
     
-    public Bloc(String pCouleur, TailleBloc pTaille, Bloc pdessous ) {
+    public Bloc(TailleBloc pTaille, String pCouleur, Bloc pdessous ) {
     	this.numero = NUMERO++;
     	this.couleur = pCouleur;
     	this.taille = pTaille;
@@ -85,13 +83,15 @@ public class Bloc {
     	else
     		return false;
     	
-
     }
 
     public void BlocDessous(Bloc bloc) {
 
     }
 
+    public void afficherBloc(Bloc b) {
+    	System.out.println("\nLe bloc de couleur: " + b.couleur + " et de taille: " + b.taille + " a ete cree\n" );
+    }
     
 
 

@@ -1,8 +1,9 @@
-package tp2;
+package  src.tp2;
 
 import in.keyboard.Keyboard;
 
 public class Monde {
+	
 	
 //	public static final int rouge = 31;
 //	public static final int vert = 32;
@@ -24,36 +25,56 @@ public class Monde {
 		Table tab = new Table();
 		Robot D2R2 = new Robot(tab);
 		char c = ' ';
-		Bloc b = new Bloc();
+		//Bloc b = new Bloc();
 		do {
-		System.out.println("1 - creer un cube");
-		System.out.println("2 - détruire un cube");
-		System.out.println("3 - prendre un cube");
+		System.out.println("1 - creer un bloc");
+		System.out.println("2 - détruire un bloc");
+		System.out.println("3 - prendre un bloc");
+		System.out.println("4 - poser un bloc sur la table");
+		System.out.println("5 - poser un bloc sur un autre bloc");
 		System.out.println("f - fin du monde");
 		System.out.print("Votre choix : ");
 		c = Keyboard.getChar();
 		switch (c) {
 		case '1': 
-			System.out.print("Couleur du cube : ");
-			string couleur = Keyboard.getString());
+			System.out.print("Couleur du bloc : ");
+			String couleur = Keyboard.getString();
 			System.out.print("Taille (grand/moyen/petit) : ");
-			string tailleBloc = Keyboard.getString());
-			D2R2.creerCube(coul, tc);
+			TailleBloc tailleBloc = TailleBloc.getTaille(Keyboard.getString());		
+			D2R2.creerBloc(tailleBloc, couleur);
 			break;
 		case '2':
-			System.out.println("Le cube tenu par le robot va être détruit ");
-			Keyboard.pause();
+			System.out.println("Le bloc tenu par le robot va être détruit ");
+			//Keyboard.pause();
 			D2R2.detruireBloc();
 			break;
+		
+		case '3':
+			System.out.print("Couleur du bloc : ");
+			String couleur1 = Keyboard.getString();
+			System.out.print("Taille (grand/moyen/petit) : ");
+			TailleBloc tailleBloc1 = TailleBloc.getTaille(Keyboard.getString());		
+			D2R2.prendreBloc(tailleBloc1, couleur1);
+			break;
+		
+		case '4':
+			System.out.println(" ");
+			D2R2.poserBloc();
+		
+		break;
+		case '5':
+			System.out.println(" ");
+			
+			break;
 		}
-		afficherMonde(D2R2, tab);
+		//afficherMonde(D2R2, tab);
 		} while (c != 'f');
 	}
 
 	private static void afficherMonde(Robot R, Table T) {
 		System.out.printf("\"Etat du monde : \"");
-		R.afficherRobot();
-		T.afficherTable();
+		//R.afficherRobot();
+		//T.afficherTable();
 //		Keyboard.pause();
 	
 	}
