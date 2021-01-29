@@ -1,8 +1,8 @@
 package tp2;
 
+import in.keyboard.Keyboard;
 
 public class Monde {
-
 	
 //	public static final int rouge = 31;
 //	public static final int vert = 32;
@@ -23,7 +23,7 @@ public class Monde {
 		Robot D2R2 = new Robot(tab);
 		char c = ' ';
 		Couleur coul;
-		TailleBloc tc;
+		TailleCube tc;
 		do {
 		System.out.println("1 - creer un cube");
 		System.out.println("2 - détruire un cube");
@@ -43,7 +43,7 @@ public class Monde {
 		case '2':
 			System.out.println("Le cube tenu par le robot va être détruit ");
 			Keyboard.pause();
-			D2R2.detruireBloc();
+			D2R2.detruireCube();
 			break;
 		}
 		afficherMonde(D2R2, tab);
@@ -59,6 +59,8 @@ public class Monde {
 	}
 
 
+
+	
 	
 	
 	

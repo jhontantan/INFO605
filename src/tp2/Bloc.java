@@ -1,57 +1,46 @@
 package tp2;
 
 
+
 public class Bloc {
-	
-	  private static Couleur Couleur;
-	  
-	  public enum Couleur
-	  {
-	   rouge, vert, jaune, bleu, violet, cyan, gris, noir;
-	   
-	   public static Couleur getCouleur(String coulSaisie) {
-	  		for (Couleur c:Couleur.values())
-	  			if (c.name().equalsIgnoreCase(coulSaisie))
-	  				return c;		
-	  		return Couleur.rouge;
-	  	}
+    private String Couleur;
 
-	   
-	  public static void testCouleur() {
-	  	for (Couleur c:Couleur.values())
-	  		Monde.ecrire(c,"test couleur");	
-	      }
-	  
+    private String getCouleur() {
+        return this.Couleur;
+    }
 
+    private void setCouleur(String value) {
+        this.Couleur = value;
+    }
 
-	    private TailleBloc Taille;
+    private TailleBloc Taille;
 
-	    private TailleBloc getTaille() {
-	        return this.Taille;
-	    }
+    private TailleBloc getTaille() {
+        return this.Taille;
+    }
 
-	    private void setTaille(TailleBloc value) {
-	        this.Taille = value;
-	    }
+    private void setTaille(TailleBloc value) {
+        this.Taille = value;
+    }
 
-	    private Bloc dessous;
+    private Bloc dessous;
 
-	    Bloc getBloc() {
+    Bloc getBloc() {
 
-	        return this.bloc;
-	    }
+        return this.bloc;
+    }
 
-	    void setBloc(Bloc value) {
-	        this.bloc = value;
-	    }
+    void setBloc(Bloc value) {
 
-	    public Bloc attraperBloc(Bloc blocSouhaite) {
-	
-	    }
+        this.bloc = value;
+    }
 
-	    public void lacherBloc(Bloc blocTenu) {
+    public boolean suisJe(TailleBloc taille, String couleur) {
 
-	    }
+    }
 
+    public void BlocDessous(Bloc bloc) {
+
+    }
 
 }
