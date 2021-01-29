@@ -56,7 +56,8 @@ public class Bloc {
         if(obj != null) {
               if(obj instanceof Bloc) {
             	  Bloc bloc = (Bloc) obj;
-                  return this.id == bloc.id; 
+            	  return this.numero == bloc.numero; 
+            	  
               }
         }
         return false;
