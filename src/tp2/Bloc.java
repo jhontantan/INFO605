@@ -4,9 +4,9 @@ package tp2;
 
 public class Bloc {
 	
-	private Integer Numero;
-    private String Couleur;
-    private TailleBloc Taille;
+	private Integer numero;
+    private String couleur;
+    private TailleBloc taille;
     private Bloc dessous;
 
     public static Integer NUMERO = 0;
@@ -14,9 +14,9 @@ public class Bloc {
     // CONSTRUCTEUR
     
     public Bloc(String pCouleur, TailleBloc pTaille, Bloc pdessous ) {
-    	this.Numero = NUMERO++;
-    	this.Couleur = pCouleur;
-    	this.Taille = pTaille;
+    	this.numero = NUMERO++;
+    	this.couleur = pCouleur;
+    	this.taille = pTaille;
     	this.dessous = pdessous;
     }
     
@@ -24,20 +24,20 @@ public class Bloc {
     // GETTERS ET SETTERS
     
     private String getCouleur() {
-        return this.Couleur;
+        return this.couleur;
     }
 
     private void setCouleur(String value) {
-        this.Couleur = value;
+        this.couleur = value;
     }
 
    
     private TailleBloc getTaille() {
-        return this.Taille;
+        return this.taille;
     }
 
     private void setTaille(TailleBloc value) {
-        this.Taille = value;
+        this.taille = value;
     }
     
 	public Bloc getDessous() {
@@ -49,7 +49,7 @@ public class Bloc {
 	}
 	
 	public Integer getNumero() {
-		return Numero;
+		return numero;
 	}
 	
 	public boolean equals(Object obj) {
@@ -80,7 +80,7 @@ public class Bloc {
     // METHODES 
 
     public boolean suisJe(TailleBloc taille, String couleur) {
-    	if (this.Couleur == couleur && this.Taille == taille)
+    	if (this.couleur == couleur && this.taille == taille)
     		return true;
     	else
     		return false;
