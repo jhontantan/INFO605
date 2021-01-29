@@ -6,7 +6,11 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< Updated upstream
 	<classpathentry kind="lib" path="C:/Users/manon/OneDrive/Bureau/L3_Info_Bourget/Semestre_6/Info-605_Conception_Orientee_Objet/TPs/TP3/Keyboard.jar">
+=======
+	<classpathentry kind="lib" path="C:/Users/jhont/Downloads/JAVA/Keyboard.jar">
+>>>>>>> Stashed changes
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
