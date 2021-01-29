@@ -3,8 +3,14 @@ package tp2;
 
 
 public class Bloc {
+	
     private String Couleur;
+    private TailleBloc Taille;
+    private Bloc dessous;
 
+
+    // GETTERS ET SETTERS
+    
     private String getCouleur() {
         return this.Couleur;
     }
@@ -13,8 +19,7 @@ public class Bloc {
         this.Couleur = value;
     }
 
-    private TailleBloc Taille;
-
+   
     private TailleBloc getTaille() {
         return this.Taille;
     }
@@ -22,9 +27,16 @@ public class Bloc {
     private void setTaille(TailleBloc value) {
         this.Taille = value;
     }
+    
+	public Bloc getDessous() {
+		return dessous;
+	}
 
-    private Bloc dessous;
+	public void setDessous(Bloc dessous) {
+		this.dessous = dessous;
+	}
 
+/*
     Bloc getBloc() {
 
         return this.bloc;
@@ -34,13 +46,20 @@ public class Bloc {
 
         this.bloc = value;
     }
+    */
+    
+    
+    // Méthodes 
 
     public boolean suisJe(TailleBloc taille, String couleur) {
+    	return true;
 
     }
 
     public void BlocDessous(Bloc bloc) {
 
     }
+
+
 
 }
