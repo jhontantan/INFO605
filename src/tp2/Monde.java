@@ -13,17 +13,18 @@ public class Monde {
 //	public static final int gris = 37;
 //	public static final int noir = 38;
 	
-	public static void ecrire(Couleur coul, String s) {
+	/*
+	public static void ecrire(Bloc s, String s) {
+		coul = s.getCouleur();
 		System.out.printf("\033[%d;1m%s\033[0m\n", coul.ordinal()+31, s);
 	}
-	
+	*/
 	public static void main(String[] args) {
 //		Couleur.testCouleur();
 		Table tab = new Table();
 		Robot D2R2 = new Robot(tab);
 		char c = ' ';
-		Couleur coul;
-		TailleCube tc;
+		Bloc b = new Bloc();
 		do {
 		System.out.println("1 - creer un cube");
 		System.out.println("2 - détruire un cube");
@@ -34,16 +35,15 @@ public class Monde {
 		switch (c) {
 		case '1': 
 			System.out.print("Couleur du cube : ");
-			coul = Couleur.getCouleur(Keyboard.getString());
-//			ecrire (coul, "couleur saisie");
+			string couleur = Keyboard.getString());
 			System.out.print("Taille (grand/moyen/petit) : ");
-			tc = TailleCube.getTaille(Keyboard.getString());
+			string tailleBloc = Keyboard.getString());
 			D2R2.creerCube(coul, tc);
 			break;
 		case '2':
 			System.out.println("Le cube tenu par le robot va être détruit ");
 			Keyboard.pause();
-			D2R2.detruireCube();
+			D2R2.detruireBloc();
 			break;
 		}
 		afficherMonde(D2R2, tab);
@@ -51,7 +51,7 @@ public class Monde {
 	}
 
 	private static void afficherMonde(Robot R, Table T) {
-		ecrire(Couleur.noir, "Etat du monde : ");
+		System.out.printf("\"Etat du monde : \"");
 		R.afficherRobot();
 		T.afficherTable();
 //		Keyboard.pause();

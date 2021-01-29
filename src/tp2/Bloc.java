@@ -55,7 +55,7 @@ public class Bloc {
 	public boolean equals(Object obj) {
         if(obj != null) {
               if(obj instanceof Bloc) {
-            	  Bloc bloc = (Ville) obj;
+            	  Bloc bloc = (Bloc) obj;
                   return this.id == bloc.id; 
               }
         }
