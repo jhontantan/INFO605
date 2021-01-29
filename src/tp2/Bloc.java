@@ -19,6 +19,7 @@ public class Bloc {
     	this.Taille = pTaille;
     	this.dessous = pdessous;
     }
+    
 
     // GETTERS ET SETTERS
     
@@ -75,10 +76,14 @@ public class Bloc {
     */
     
     
-    // Méthodes 
+    // METHODES 
 
     public boolean suisJe(TailleBloc taille, String couleur) {
-    	return true;
+    	if (this.Couleur == couleur && this.Taille == taille)
+    		return true;
+    	else
+    		return false;
+    	
 
     }
 
