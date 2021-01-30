@@ -1,6 +1,8 @@
 package src.tp2;
 
 import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Robot {
     
@@ -78,29 +80,21 @@ public class Robot {
     }
 
     public void prendreBloc(TailleBloc taille, String couleur) {
+    	List<Bloc> sommets = this.table.getSommets();
+    	//Bloc bloc;
 		// on verifie que le robot n'a pas de bloc dans son bras
     	if (tenirBloc() == false) {   
     		
-    		// On regarde sur la table les caractéristiques du bloc que l'on cherche
-    		for(int i=0;i<=this.table.getSommets().size();i++) {
-    			if (this.table.getSommets().get(i)) {
-					
-				}
-    			
-    		}
-    		for (Iterator iterator = collection.iterator(); iterator.hasNext();) {
-				type type = (type) iterator.next();
-				
-			}
-    		//regardeBlocSurTable(Bloc(couleur, taille, null));
-    		
-    		// On demande au bloc s'il correspond bien
-    		
-    		// On met à jour le sommet
-    		
-    		// Le robot tient désormais un bloc dans son bras
-    		//tenirBloc() = true;
-    		
+    
+    		     for (Bloc bloc : sommets ) {
+    		        // Probleme sur la couleur à regarder apres
+    		        if (bloc.getTaille()==taille) {
+    		        	this.blocTenu=bloc;
+    		        	sommets.remove(bloc);
+    		        	break;
+    		        }      
+    		   }
+
     	}
     
     }
@@ -113,7 +107,6 @@ public class Robot {
     		this.blocTenu = null;
 			System.out.println("Le bloc tenu a bien été posé sur la table ");
 			System.out.println("\nLa table contient " + this.table.nombreBlocSurTable() + "bloc(s)");
-
 			
     	}
     	else {
@@ -124,8 +117,57 @@ public class Robot {
     }
 
     public void poserBlocSurBloc(TailleBloc taille, String couleur) {
+    	List<Bloc> sommets = this.table.getSommets();
+
+    	if (tenirBloc() == true ) {
+    		
+    		 for (Bloc bloc : sommets ) {
+ 		        // Probleme sur la couleur à regarder apres
+ 		        if (bloc.getTaille()==taille) {
+ 		        	if (validerTaille(bloc.getTaille())) {
+ 		        		
+						this.blocTenu.BlocDessous(bloc);
+						sommets.remove(bloc);
+						sommets.add(blocTenu);
+						this.blocTenu=null;
+						System.out.println("Le bloc tenu a bien été posé sur le bloc");
+	 		        	break;
+					}else {
+						System.out.println("Le bloc tenu ne peut pas etre pose sur un bloc plus petit ou de meme taille");
+					}
+ 		        	
+ 		        	
+ 		        }      
+ 		   }
+    	
+    	}
 
     }
+    
+    public boolean validerTaille(TailleBloc tailleBlocTable) {
+    	
+    	if (this.blocTenu.getTaille()==TailleBloc.petit && (tailleBlocTable==TailleBloc.moyen || tailleBlocTable==TailleBloc.grand)) {
+			return true;
+		}
+    	else if (this.blocTenu.getTaille()==TailleBloc.moyen && tailleBlocTable==TailleBloc.grand ) {
+			return true;
+		}else {
+			return false;
+		}
+    	
+    	
+    }
+
+	public void afficherRobot() {
+		if (blocTenu ==null) {
+			System.out.println("Robot ne tient pas de bloc");
+		}else {
+			System.out.println("Robot tient: "+blocTenu);
+		}
+		
+
+		
+	}
 
 }
 

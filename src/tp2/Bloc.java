@@ -21,20 +21,20 @@ public class Bloc {
 
     // GETTERS ET SETTERS
     
-    private String getCouleur() {
+    public String getCouleur() {
         return this.couleur;
     }
 
-    private void setCouleur(String value) {
+    public void setCouleur(String value) {
         this.couleur = value;
     }
 
    
-    private TailleBloc getTaille() {
+    public TailleBloc getTaille() {
         return this.taille;
     }
 
-    private void setTaille(TailleBloc value) {
+    public void setTaille(TailleBloc value) {
         this.taille = value;
     }
     
@@ -86,14 +86,17 @@ public class Bloc {
     }
 
     public void BlocDessous(Bloc bloc) {
-
+    	this.dessous=bloc;
     }
 
     public void afficherBloc(Bloc b) {
     	System.out.println("\nLe bloc de couleur: " + b.couleur + " et de taille: " + b.taille + " a ete cree\n" );
     }
     
-
+	@Override
+	public String toString() {
+		return "Bloc [couleur=" + couleur + ", taille=" + taille + ", dessous=" + dessous + "]";
+	}
 
 
 }

@@ -67,5 +67,18 @@ public class Table {
 
     }
 
+	public void afficherTable() {
+		
+		if (sommets.isEmpty()) {
+	    	  System.out.println("Aucun bloc n'est sur la table");
+		}else {
+			System.out.println("Les blocs sur la table sont: ");
+			for (Bloc bloc : sommets ) {
+		    	  System.out.println(bloc);
+		        }	
+		}
+			
+	}
+
 }
 

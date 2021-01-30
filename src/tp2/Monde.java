@@ -32,7 +32,11 @@ public class Monde {
 		System.out.println("3 - prendre un bloc");
 		System.out.println("4 - poser un bloc sur la table");
 		System.out.println("5 - poser un bloc sur un autre bloc");
+		System.out.println("6 - Afficher Monde");
+
 		System.out.println("f - fin du monde");
+		System.out.println("9 - Bloc grand - rouge");
+
 		System.out.print("Votre choix : ");
 		c = Keyboard.getChar();
 		switch (c) {
@@ -58,24 +62,35 @@ public class Monde {
 			break;
 		
 		case '4':
-			System.out.println(" ");
 			D2R2.poserBloc();
 		
 		break;
 		case '5':
-			System.out.println(" ");
+			System.out.println("Vous voulez poser votre bloc sur un bloc :\n");
+			System.out.print("Couleur : ");
+			String couleur2 = Keyboard.getString();
+			System.out.print("Taille (grand/moyen/petit) : ");
+			TailleBloc tailleBloc2 = TailleBloc.getTaille(Keyboard.getString());	
+			D2R2.poserBlocSurBloc(tailleBloc2, couleur2);
 			
 			break;
+		case '6':
+			afficherMonde(D2R2, tab);			
+			break;
+		case '9':
+			System.out.println(" ");
+			D2R2.creerBloc(TailleBloc.getTaille("grand"), "rouge");
+		break;
 		}
-		//afficherMonde(D2R2, tab);
+		
+		afficherMonde(D2R2, tab);
 		} while (c != 'f');
 	}
 
 	private static void afficherMonde(Robot R, Table T) {
-		System.out.printf("\"Etat du monde : \"");
-		//R.afficherRobot();
-		//T.afficherTable();
-//		Keyboard.pause();
+		System.out.printf("\n Etat du monde : \n ");
+		R.afficherRobot();
+		T.afficherTable();
 	
 	}
 
