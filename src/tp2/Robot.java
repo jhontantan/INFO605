@@ -81,7 +81,6 @@ public class Robot {
 
     public void prendreBloc(TailleBloc taille, String couleur) {
     	List<Bloc> sommets = this.table.getSommets();
-    	//Bloc bloc;
 		// on verifie que le robot n'a pas de bloc dans son bras
     	if (tenirBloc() == false) {   
     		
@@ -89,12 +88,14 @@ public class Robot {
     		     for (Bloc bloc : sommets ) {
     		        // Probleme sur la couleur à regarder apres
     		        if (bloc.getTaille()==taille) {
+    		        	sommets.add(bloc.getDessous());
+    		        	bloc.setDessous(null);
     		        	this.blocTenu=bloc;
     		        	sommets.remove(bloc);
     		        	break;
     		        }      
     		   }
-
+    		     	//aficher info 
     	}
     
     }
