@@ -14,18 +14,15 @@ public class Monde {
 //	public static final int gris = 37;
 //	public static final int noir = 38;
 	
-	/*
-	public static void ecrire(Bloc s, String s) {
-		coul = s.getCouleur();
-		System.out.printf("\033[%d;1m%s\033[0m\n", coul.ordinal()+31, s);
-	}
-	*/
+
+	/**
+	 * 
+	 */
 	public static void main(String[] args) {
-//		Couleur.testCouleur();
+		try {
 		Table tab = new Table();
 		Robot D2R2 = new Robot(tab);
 		char c = ' ';
-		//Bloc b = new Bloc();
 		do {
 		System.out.println("1 - creer un bloc");
 		System.out.println("2 - d�truire un bloc");
