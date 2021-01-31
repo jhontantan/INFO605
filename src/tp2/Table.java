@@ -1,6 +1,7 @@
 package  src.tp2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Table {
@@ -23,52 +24,25 @@ public class Table {
     }
     
     // METHODES 
-    
-    public Bloc prendreBloc(Bloc b) {
-    	return b;
-    	
-    }
 
     public int nombreBlocSurTable() {
     	return this.sommets.size();	
 	}
-    public Bloc regardeBlocSurTable(Bloc b) {
-    	
-    	
-    	return b;
-    }
 
-    public boolean verifierEspace() {
-    	return true;
-    }
-
-
-    public void trouveBlocPlusGrand(TailleBloc taille) {
-
-    }
-
+    
     public void supprimerSommet(Bloc bloc) {
-    	//this.sommets.remove(bloc.getNumero());
+    	this.sommets.remove(bloc);
+
+    	
     }
 
     public void ajouterSommet(Bloc nouveauSommet) {
     	this.sommets.add(nouveauSommet);
     }
 
-    public Bloc regardeSommet(Bloc b) {
-    	return b;
-    }
-
-    public void poserBlocSurBloc(TailleBloc taille, String couleur, Bloc blocTenu) {
-
-    }
-
-    public void poserBlocSurTable(Bloc bloc) {
-
-    }
 
 	public void afficherTable() {
-		
+    	sommets.removeAll(Collections.singleton(null));
 		if (sommets.isEmpty()) {
 	    	  System.out.println("Aucun bloc n'est sur la table");
 		}else {

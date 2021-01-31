@@ -1,8 +1,5 @@
 package src.tp2;
 
-import java.util.Iterator;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Robot {
     
@@ -50,10 +47,10 @@ public class Robot {
     	if (tenirBloc() == false ) {
     		Bloc b = new Bloc(taille,couleur,null);
         	this.blocTenu = b;
-    		b.afficherBloc(b);
+    	
 		}
     	else {
-			System.out.println("Le robot tient déjà un bloc, par conséquent aucune action n'est effectuée.\n");
+			System.out.println("Le robot tient dï¿½jï¿½ un bloc, par consï¿½quent aucune action n'est effectuï¿½e.\n");
 
 		}
 
@@ -68,70 +65,71 @@ public class Robot {
 			return true;
 		}
     }
-    //Changer diagrame de classe @param bloc
     public void detruireBloc() {
     	if (tenirBloc() == true ) {
     		this.blocTenu = null;
-			System.out.println("Le bloc tenu a bien été détruit ");
+			System.out.println("Le bloc tenu a bien ï¿½tï¿½ dï¿½truit ");
     	}
     	else {
-			System.out.println("Le robot ne tient aucun bloc, par conséquent aucune action n'est effectuee\n");
+			System.out.println("Le robot ne tient aucun bloc, par consï¿½quent aucune action n'est effectuee\n");
 		}	  
     }
 
     public void prendreBloc(TailleBloc taille, String couleur) {
-    	List<Bloc> sommets = this.table.getSommets();
+
+    	
 		// on verifie que le robot n'a pas de bloc dans son bras
     	if (tenirBloc() == false) {   
     		
     
-    		     for (Bloc bloc : sommets ) {
-    		        // Probleme sur la couleur à regarder apres
-    		        if (bloc.getTaille()==taille) {
-    		        	sommets.add(bloc.getDessous());
+    		     for (Bloc bloc : this.table.getSommets() ) {
+    		    
+    		        if (bloc.getTaille()==taille&&bloc.getCouleur().equals(couleur)) {		        	
+    		        	//sommets.add(bloc.getDessous());
+    		        	this.table.ajouterSommet(bloc.getDessous());
     		        	bloc.setDessous(null);
     		        	this.blocTenu=bloc;
-    		        	sommets.remove(bloc);
+    		        	//this.table.supprimerSommet(bloc);
+    		        	this.table.getSommets().remove(bloc);
+    					System.out.println("Le robot a bien reussi ï¿½ prendre le bloc souhaite\n");
     		        	break;
     		        }      
     		   }
-    		     	//aficher info 
-    	}
-    
+ 		     
+    	}else {
+			System.out.println("Le robot tient deja un bloc, par consï¿½quent aucune action n'est effectuï¿½e.\n");
+		}   
     }
 
-    //Changer diagrame de classe @param bloc
-
-    public void poserBloc() {
+    public void poserBlocSurtable() {
     	if (tenirBloc() == true ) {
         	this.table.ajouterSommet(this.blocTenu);
     		this.blocTenu = null;
-			System.out.println("Le bloc tenu a bien été posé sur la table ");
+			System.out.println("Le bloc tenu a bien ï¿½tï¿½ posï¿½ sur la table ");
 			System.out.println("\nLa table contient " + this.table.nombreBlocSurTable() + "bloc(s)");
 			
     	}
     	else {
-			System.out.println("Le robot ne tient aucun bloc, par conséquent aucune action n'est effectuee\n");
+			System.out.println("Le robot ne tient aucun bloc, par consï¿½quent aucune action n'est effectuee\n");
 		}
     	
 
     }
 
     public void poserBlocSurBloc(TailleBloc taille, String couleur) {
-    	List<Bloc> sommets = this.table.getSommets();
 
     	if (tenirBloc() == true ) {
     		
-    		 for (Bloc bloc : sommets ) {
- 		        // Probleme sur la couleur à regarder apres
+    		 for (Bloc bloc : this.table.getSommets() ) {
+ 		        // Probleme sur la couleur ï¿½ regarder apres
  		        if (bloc.getTaille()==taille) {
  		        	if (validerTaille(bloc.getTaille())) {
  		        		
 						this.blocTenu.BlocDessous(bloc);
-						sommets.remove(bloc);
-						sommets.add(blocTenu);
+						this.table.supprimerSommet(bloc);
+						this.table.ajouterSommet(this.blocTenu);
 						this.blocTenu=null;
-						System.out.println("Le bloc tenu a bien été posé sur le bloc");
+						System.out.println("Le bloc tenu a bien ï¿½tï¿½ posï¿½ sur le bloc");
 	 		        	break;
 					}else {
 						System.out.println("Le bloc tenu ne peut pas etre pose sur un bloc plus petit ou de meme taille");

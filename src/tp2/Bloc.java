@@ -22,7 +22,7 @@ public class Bloc {
     // GETTERS ET SETTERS
     
     public String getCouleur() {
-        return this.couleur;
+        return couleur;
     }
 
     public void setCouleur(String value) {
@@ -61,20 +61,6 @@ public class Bloc {
         return false;
     }
 
-
-/*
-    Bloc getBloc() {
-
-        return this.bloc;
-    }
-
-    void setBloc(Bloc value) {
-
-        this.bloc = value;
-    }
-    */
-    
-    
     // METHODES 
 
     public boolean suisJe(TailleBloc taille, String couleur) {
@@ -89,9 +75,6 @@ public class Bloc {
     	this.dessous=bloc;
     }
 
-    public void afficherBloc(Bloc b) {
-    	System.out.println("\nLe bloc de couleur: " + b.couleur + " et de taille: " + b.taille + " a ete cree\n" );
-    }
     
 	@Override
 	public String toString() {

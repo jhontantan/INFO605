@@ -28,7 +28,7 @@ public class Monde {
 		//Bloc b = new Bloc();
 		do {
 		System.out.println("1 - creer un bloc");
-		System.out.println("2 - détruire un bloc");
+		System.out.println("2 - dï¿½truire un bloc");
 		System.out.println("3 - prendre un bloc");
 		System.out.println("4 - poser un bloc sur la table");
 		System.out.println("5 - poser un bloc sur un autre bloc");
@@ -48,8 +48,7 @@ public class Monde {
 			D2R2.creerBloc(tailleBloc, couleur);
 			break;
 		case '2':
-			System.out.println("Le bloc tenu par le robot va être détruit ");
-			//Keyboard.pause();
+			System.out.println("Le bloc tenu par le robot va ï¿½tre dï¿½truit ");
 			D2R2.detruireBloc();
 			break;
 		
@@ -62,7 +61,7 @@ public class Monde {
 			break;
 		
 		case '4':
-			D2R2.poserBloc();
+			D2R2.poserBlocSurtable();
 		
 		break;
 		case '5':
@@ -93,10 +92,8 @@ public class Monde {
 		T.afficherTable();
 	
 	}
-
-
-
 	
+
 	
 	
 	
