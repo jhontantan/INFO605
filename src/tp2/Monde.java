@@ -1,23 +1,13 @@
 package  src.tp2;
 
+
 import in.keyboard.Keyboard;
 
 public class Monde {
 	
 	
-//	public static final int rouge = 31;
-//	public static final int vert = 32;
-//	public static final int jaune = 33;
-//	public static final int bleu = 34;
-//	public static final int violet = 35;
-//	public static final int cyan = 36;
-//	public static final int gris = 37;
-//	public static final int noir = 38;
-	
+	private static final long serialVersionUID = 1L;
 
-	/**
-	 * 
-	 */
 	public static void main(String[] args) {
 		try {
 		Table tab = new Table();

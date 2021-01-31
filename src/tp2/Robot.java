@@ -50,7 +50,7 @@ public class Robot {
     	
 		}
     	else {
-			System.out.println("Le robot tient d�j� un bloc, par cons�quent aucune action n'est effectu�e.\n");
+			System.out.println("Le robot tient deja un bloc, par consequent  aucune action n'est effectuee.\n");
 
 		}
 
@@ -68,10 +68,10 @@ public class Robot {
     public void detruireBloc() {
     	if (tenirBloc() == true ) {
     		this.blocTenu = null;
-			System.out.println("Le bloc tenu a bien �t� d�truit ");
+			System.out.println("Le bloc tenu a bien ete detruit ");
     	}
     	else {
-			System.out.println("Le robot ne tient aucun bloc, par cons�quent aucune action n'est effectuee\n");
+			System.out.println("Le robot ne tient aucun bloc, par consequent aucune action n'est effectuee.\n");
 		}	  
     }
 
@@ -85,19 +85,17 @@ public class Robot {
     		     for (Bloc bloc : this.table.getSommets() ) {
     		    
     		        if (bloc.getTaille()==taille&&bloc.getCouleur().equals(couleur)) {		        	
-    		        	//sommets.add(bloc.getDessous());
     		        	this.table.ajouterSommet(bloc.getDessous());
     		        	bloc.setDessous(null);
     		        	this.blocTenu=bloc;
-    		        	//this.table.supprimerSommet(bloc);
     		        	this.table.getSommets().remove(bloc);
-    					System.out.println("Le robot a bien reussi � prendre le bloc souhaite\n");
+    					System.out.println("Le robot a bien reussi a prendre le bloc souhaite\n");
     		        	break;
     		        }      
     		   }
  		     
     	}else {
-			System.out.println("Le robot tient deja un bloc, par cons�quent aucune action n'est effectu�e.\n");
+			System.out.println("Le robot tient deja un bloc, par consequent aucune action n'est effectuee.\n");
 		}   
     }
 
@@ -110,7 +108,7 @@ public class Robot {
 			
     	}
     	else {
-			System.out.println("Le robot ne tient aucun bloc, par cons�quent aucune action n'est effectuee\n");
+			System.out.println("Le robot ne tient aucun bloc, par consequent aucune action n'est effectuee\n");
 		}
     	
 
@@ -121,15 +119,14 @@ public class Robot {
     	if (tenirBloc() == true ) {
     		
     		 for (Bloc bloc : this.table.getSommets() ) {
- 		        // Probleme sur la couleur � regarder apres
- 		        if (bloc.getTaille()==taille) {
+ 		        if (bloc.getTaille()==taille&&bloc.getCouleur().equals(couleur)) {
  		        	if (validerTaille(bloc.getTaille())) {
  		        		
 						this.blocTenu.BlocDessous(bloc);
 						this.table.supprimerSommet(bloc);
 						this.table.ajouterSommet(this.blocTenu);
 						this.blocTenu=null;
-						System.out.println("Le bloc tenu a bien �t� pos� sur le bloc");
+						System.out.println("Le bloc tenu a bien ete pose sur le bloc");
 	 		        	break;
 					}else {
 						System.out.println("Le bloc tenu ne peut pas etre pose sur un bloc plus petit ou de meme taille");
