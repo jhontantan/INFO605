@@ -1,15 +1,21 @@
 package  src.tp2;
 
+import javax.swing.UnsupportedLookAndFeelException;
 
 import in.keyboard.Keyboard;
 
 public class Monde {
 	
-	
+
 	private static final long serialVersionUID = 1L;
 
 	public static void main(String[] args) {
 		try {
+			new Fenetre();
+		} catch (UnsupportedLookAndFeelException e) {
+			e.printStackTrace();
+		}
+		
 		Table tab = new Table();
 		Robot D2R2 = new Robot(tab);
 		char c = ' ';
